@@ -1,1 +1,2 @@
-Template for JS HTML Projects
+Hundo
+Print out 100 numbers to screen.
