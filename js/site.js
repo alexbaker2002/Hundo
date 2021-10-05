@@ -21,7 +21,13 @@ function loopyHundo() {
 
 //generate the numbers from start to end
 function generateNumbers(start, end) {
-  let a = []
+  let a = [];
+    if (end < start) {
+      let end2 = start;
+      start = end;
+      end = end2
+    }
+
   // Loop through the numbers
   for (let index = start; index <= end; index++) {
     a.push(index);
@@ -32,8 +38,9 @@ function generateNumbers(start, end) {
 
 function displayNumbersToPage(numArray) {
   let startIndex = numArray[0];
-  // assign inner tag to var
+  // assign inner tag to var and clear innerHTML
   let ptag = document.getElementById("resultsID")
+  ptag.innerHTML = "";
   //iterate through array and add to UI
   for (let index = 0; index < numArray.length; index++) {
     let number = numArray[index];
