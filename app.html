@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>AppName: Code Challenge by Alex Baker</title>
+    <title>Hundo: Code Challenge by Alex Baker</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/index.html"><img src="/img/logocolortransparent.svg" width="45px"
-                    alt="Navbar logo" class=" d-align-block align-text-center p-0">&nbsp;&nbsp;AppName</a>
+                    alt="Navbar logo" class=" d-align-block align-text-center p-0">&nbsp;&nbsp;Hundo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -53,20 +53,51 @@
         </div>
     </nav>
     <main id="content" class="flex-shrink-0">
-        <div class="container">
+        <div class="container mt-5">
+            
+            <div class="row row-cols-1 row-cols-lg-2">
+                <div class="col">
+                    <h1>Hundo: A Coding Challenge</h1>
+                    <p> Loops through numbers up to 100 and shows the even numbers in bold text.</p>
 
-            <h1>The App UI Goes Here</h1>
+                    <h3 class="mt-5 border-2 border-bottom">Instructions</h3>
+                    <p>
+                        Enter a started and ending value. Press the button and the values will appear.
+                    </p>
+                </div>
+                <div class="col">
+                    <div class="container">
+                        <div class="row ">
+                            <div class="col mt-4 mt-lg-3">
+                                <h5>Enter Values</h5>
+                                <form>
+                                    <div class="row">
+                                        <div class="col">
+                                            <input id="startValueID" type="number" class="form-control"
+                                                placeholder="Start Value" value="0" aria-label="Start Value">
 
-            <input id="message" type="text" placeholder="Enter a message" required>
-            <button id="btnSubmit" type="button" class="btn btn-dark">Display Message</button>
 
+                                        </div>
+                                        <div class="col"><input id="endValueID" type="number" class="form-control"
+                                                placeholder="End Value" value="100" aria-label="End Value">
+                                        </div>
 
+                                        <div class="col-12 d-flex justify-content-end mt-2"><button id="btnSubmit" type="button"
+                                                class="btn btn-dark btn-lg">Display Hundo</button>
+                                            
+                                        </div>
 
+                                    </div>
+                                </form>
+                                <h2 class="border-bottom border-2">Results</h2>
+                                <p id="resultsID">
 
-            </form>
-
-
-
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -108,9 +139,9 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/site.js"></script>
     <script>
-        document.getElementById('btnSubmit').addEventListener("click", displayMessage)
+        document.getElementById('btnSubmit').addEventListener("click", loopyHundo)
     </script>
-    
+
 </body>
 
 
