@@ -8,8 +8,8 @@ function loopyHundo() {
   startingNumber = parseInt(startingNumber);
   endingNumber = parseInt(endingNumber)
   if (Number.isInteger(startingNumber) && Number.isInteger(endingNumber)) {
-    startingNumber < 100 ? null : startingNumber == 100;
-    endingNumber > 0 ? null : startingNumber == 0;
+    startingNumber < 0 ? null : startingNumber = 0;
+    endingNumber > 100 ? null : endingNumber = 100;
     // get the numbers
     let numbersArray = generateNumbers(startingNumber, endingNumber);
     // display numbers in UI
@@ -22,11 +22,12 @@ function loopyHundo() {
 //generate the numbers from start to end
 function generateNumbers(start, end) {
   let a = [];
-    if (end < start) {
-      let end2 = start;
-      start = end;
-      end = end2
-    }
+  // validate start is lower than end
+  if (end < start) {
+    let end2 = start;
+    start = end;
+    end = end2
+  }
 
   // Loop through the numbers
   for (let index = start; index <= end; index++) {
@@ -39,11 +40,20 @@ function generateNumbers(start, end) {
 function displayNumbersToPage(numArray) {
   let startIndex = numArray[0];
   // assign inner tag to var and clear innerHTML
-  let ptag = document.getElementById("resultsID")
-  ptag.innerHTML = "";
+  let tableBody = document.getElementById("resultsID")
+  tableBody.innerHTML = "";
   //iterate through array and add to UI
   for (let index = 0; index < numArray.length; index++) {
     let number = numArray[index];
-    ptag.innerHTML += number + " | ";
+    
+    tableBody.innerHTML += genHTML(number);
+  }
+}
+// writes html for even or odd numbers
+function genHTML(testNumber){
+  if (testNumber % 2 == 0){
+    return (`<tr><td class="evenNumber">${testNumber}</td></tr>`);
+  } else {
+    return (`<tr><td class="oddNumber">${testNumber}</td></tr>`);
   }
 }

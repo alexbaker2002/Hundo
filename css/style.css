@@ -49,7 +49,7 @@ body {
 .footer {
     background-color: var(--dark-color);
     color: var(--white-color);
-    bottom: 0;
+    bottom:0;
     position: absolute;
     width: 100%;
 }
@@ -92,4 +92,13 @@ body {
 }
 .checkList>li i{
     color: var(--secondary-color);
+}
+
+.tableContainer{
+    overflow-y: scroll;
+    height: 30vh;
+}
+
+.evenNumber{
+    font-weight: bold;
 }
